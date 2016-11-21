@@ -1,0 +1,42 @@
+{
+  "name": "redux-beers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo index.js --live --port 4000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielamelian/redux-beers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielamelian/redux-beers/issues"
+  },
+  "homepage": "https://github.com/gabrielamelian/redux-beers#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "budo": "^9.2.2",
+    "clone": "^2.0.0",
+    "redux": "^3.6.0",
+    "superagent": "^3.0.0",
+    "yo-yo": "^1.3.1"
+  }
+}
