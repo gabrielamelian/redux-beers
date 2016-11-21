@@ -6,15 +6,19 @@ const reducer = (state, action) => {
 
   switch(action.type){
     case 'FETCH_BEERS':
+      newState.showStyle = false
       newState.beers = action.payload
       newState.styles = getStyles(newState.beers)
       return newState
     case 'TOGGLE_LOADING':
      newState.loading = !newState.loading
      return newState
-    case 'TOGGLE_STYLE':
-      newState.showStyle = !newState.showStyle
+    case 'SHOW_STYLE':
+      newState.showStyle = true
       newState.sortedBeersByStyle = sortStyle(newState.beers, action.payload)
+      return newState
+    case 'SHOW_ALL':
+      newState.showStyle = false
       return newState
     default:
       return newState
