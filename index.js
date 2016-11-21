@@ -6,7 +6,8 @@ const reducer = require('./reducer')
 
 var initialState = {
   beers: [],
-  loading: false
+  loading: false,
+  showStyle: false
 }
 
 const store = redux.createStore(reducer, initialState)

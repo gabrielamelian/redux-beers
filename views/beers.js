@@ -1,6 +1,7 @@
 const html = require('yo-yo')
-const request = require('superagent')
 const beer = require('./beer')
+const getBeers = require('../requests/getBeers')
+const getStyles = require('../requests/getStyles')
 
 const template = (state, dispatch) => {
   return html`
@@ -15,14 +16,5 @@ const template = (state, dispatch) => {
   `
 }
 
-function getBeers (state, dispatch){
-  dispatch({type: 'TOGGLE_LOADING'})
-  request
-    .get('http://rogue-beers.herokuapp.com/api/v1/beers')
-    .end((err, res) => {
-      if (err) return
-      dispatch({type: 'TOGGLE_LOADING'})
-      dispatch({type: 'FETCH_BEERS', payload: res.body.beers})
-    })
-}
+
 module.exports = template
