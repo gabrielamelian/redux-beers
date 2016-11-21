@@ -1,6 +1,6 @@
 const html = require('yo-yo')
 
-const beer = ({beers}, dispatch) => {
+const beer = (beers, dispatch) => {
   return beers.map((beer, index) => html`
     <li id='${index}'>
       <div>${beer.name}</div>
