@@ -17,10 +17,15 @@ const reducer = (state, action) => {
      return newState
     case 'SHOW_STYLE':
       newState.showStyle = true
+      newState.style = action.payload
       newState.sortedBeersByStyle = sortStyle(newState.beers, action.payload)
       return newState
     case 'SHOW_ALL':
       newState.showStyle = false
+      return newState
+    case 'SHOW_DESCRIPTION':
+      newState.styleDescription = action.payload
+
       return newState
     default:
       return newState

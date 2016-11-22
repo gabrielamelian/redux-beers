@@ -9,7 +9,9 @@ var initialState = {
   loading: false,
   showStyle: false,
   styles: [],
-  sortedBeersByStyle: []
+  sortedBeersByStyle: [],
+  styleDescription: '',
+  style: ''
 }
 
 const store = redux.createStore(reducer, initialState)

@@ -28,18 +28,4 @@ function getStyles(beers) {
   return styles
 }
 
-
-function getDescription(style, callback) {
-  const url = `https://rogue-beers.herokuapp.com/api/v1/styles?q=${style.name}`
-  request
-    .get(url)
-    .end(function(err, res) {
-      if(err) return
-      //style.description = res.body.styles[0].description || ''
-      const description = (description) ? res.body.styles[0].description : ''
-      callback(description)
-    })
-}
-
-
 module.exports = getStyles
