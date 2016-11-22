@@ -1,4 +1,5 @@
 const clone = require('clone')
+const getStyles = require('./requests/getStyles')
 
 const reducer = (state, action) => {
   const newState = clone(state)
@@ -9,6 +10,7 @@ const reducer = (state, action) => {
       newState.showStyle = false
       newState.beers = action.payload
       newState.styles = getStyles(newState.beers)
+      console.log(newState.styles);
       return newState
     case 'TOGGLE_LOADING':
      newState.loading = !newState.loading
@@ -31,12 +33,6 @@ function sortStyle(beers, style) {
   })
 }
 
-function getStyles(beers) {
-  const styles = []
-  beers.forEach(function(beer) {
-    if (!styles.includes(beer.style)) styles.push(beer.style)
-  })
-  return styles
-}
+
 
 module.exports = reducer
